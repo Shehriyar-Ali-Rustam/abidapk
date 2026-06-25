@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   @default("user")
+  avatar    String?
+  createdAt DateTime @default(now())
+  reviews   Review[]
+}
+
+model Category {
+  id   String @id @default(cuid())
+  name String @unique
+  slug String @unique
+  icon String
+  apps App[]
+}
+
+model App {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  developer    String
+  description  String
+  shortDesc    String
+  version      String
+  packageName  String?
+  platform     String
+  size         String?
+  icon         String?
+  screenshots  String    @default("[]")
+  categoryId   String
+  category     Category  @relation(fields: [categoryId], references: [id])
+  downloads    Int       @default(0)
+  featured     Boolean   @default(false)
+  status       String    @default("active")
+  downloadUrl  String?
+  externalLink String?
+  tags         String    @default("[]")
+  minOs        String?
+  license      String    @default("Free")
+  website      String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  reviews      Review[]
+  files        AppFile[]
+}
+
+model AppFile {
+  id         String   @id @default(cuid())
+  appId      String
+  app        App      @relation(fields: [appId], references: [id], onDelete: Cascade)
+  version    String
+  filename   String
+  filepath   String
+  filesize   String
+  platform   String
+  uploadedAt DateTime @default(now())
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  appId     String
+  app       App      @relation(fields: [appId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+
+  @@unique([appId, userId])
+}

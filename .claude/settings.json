@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)",
+      "Bash(cp -r /home/shehriyar-ali-rustam/abid-apk/. /home/shehriyar-ali-rustam/ABID_APK/)",
+      "Bash(rm -rf /home/shehriyar-ali-rustam/abid-apk)",
+      "Bash(npx prisma *)",
+      "Bash(mkdir -p /home/shehriyar-ali-rustam/ABID_APK/src/app/api/auth/\\\\[...nextauth\\\\] /home/shehriyar-ali-rustam/ABID_APK/src/app/api/apps/\\\\[id\\\\] /home/shehriyar-ali-rustam/ABID_APK/src/app/api/categories /home/shehriyar-ali-rustam/ABID_APK/src/app/api/reviews /home/shehriyar-ali-rustam/ABID_APK/src/app/api/upload /home/shehriyar-ali-rustam/ABID_APK/src/app/api/download/\\\\[id\\\\] /home/shehriyar-ali-rustam/ABID_APK/src/app/api/register && echo \"API dirs created\")",
+      "Bash(mkdir -p /home/shehriyar-ali-rustam/ABID_APK/src/app/apps/\\\\[slug\\\\] && echo \"done\")",
+      "Bash(mkdir -p /home/shehriyar-ali-rustam/ABID_APK/src/app/admin/apps/new /home/shehriyar-ali-rustam/ABID_APK/src/app/admin/apps/\\\\[id\\\\] && echo \"done\")",
+      "Bash(npx tsx *)",
+      "Bash(npx next *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/api/apps)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&q=85&fm=jpg\" -o /home/shehriyar-ali-rustam/ABID_APK/public/hero-bg.jpg)",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); console.log\\(Object.keys\\(lr\\).filter\\(k => k.toLowerCase\\(\\).includes\\('git'\\) || k.toLowerCase\\(\\).includes\\('twit'\\) || k.toLowerCase\\(\\).includes\\('link'\\)\\)\\)\")",
+      "Bash(git -C /home/shehriyar-ali-rustam/ABID_APK status)",
+      "Bash(git -C /home/shehriyar-ali-rustam/ABID_APK remote -v)",
+      "Bash(git -C /home/shehriyar-ali-rustam/ABID_APK rev-parse --show-toplevel)"
+    ],
+    "additionalDirectories": [
+      "/home/shehriyar-ali-rustam/ABID_APK/src/app/api/auth",
+      "/home/shehriyar-ali-rustam/ABID_APK/src/app/apps",
+      "/home/shehriyar-ali-rustam/ABID_APK/src/app/admin/apps"
+    ]
+  }
+}
