@@ -62,18 +62,25 @@ export default async function HomePage() {
       {/* ════════════════════════════════════════
           HERO  — dark, full-width, game images
           ════════════════════════════════════════ */}
-      <section className="relative bg-[#080e1a] overflow-hidden min-h-[600px] flex items-center">
+      <section className="relative overflow-hidden min-h-[600px] flex items-center">
 
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#080e1a] via-[#0d1f3c] to-[#080e1a]" />
+        {/* Hero background image */}
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/hero-bg.jpg" alt="" className="w-full h-full object-cover object-center" />
+        </div>
+
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#040a14]/95 via-[#060d1c]/85 to-[#040a14]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040a14]/80 via-transparent to-[#040a14]/40" />
 
         {/* Subtle grid lines */}
-        <div className="absolute inset-0 opacity-[0.04]"
+        <div className="absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
 
         {/* Glow orbs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/15 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/25 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -188,7 +195,7 @@ export default async function HomePage() {
         </div>
 
         {/* Bottom fade */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f1f5f9] to-transparent z-20" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-transparent z-20" />
       </section>
 
 
